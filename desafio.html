@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Pic Imóveis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Pic Imóveis</h1>
+                <p>Imobiliária</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Sobre Nós</a></li>
+                    <li><a href="imoveis.html">Imóveis</a></li>
+                    <li><a href="investimentos.html">Investimentos</a></li>
+                    <li><a href="desafio.html" class="active">Desafio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-small">
+        <div class="container">
+            <h2>Desafio para Agentes de IA</h2>
+            <p>Crie um agente inteligente que ajude clientes a encontrar o imóvel ideal</p>
+        </div>
+    </section>
+
+    <section class="challenge">
+        <div class="container">
+            <h2>Visão Geral do Desafio</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Explorar Dados</h3>
+                        <p>Utilize seu agente de IA para explorar nosso catálogo de imóveis e áreas de investimento.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Cruzar Informações</h3>
+                        <p>Seu agente deve ser capaz de cruzar dados de imóveis com informações sobre bairros e tendências de investimento.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Recomendar Imóveis</h3>
+                        <p>Com base nas preferências do cliente, o agente deve recomendar os melhores imóveis e explicar o potencial de valorização.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="api-credentials">
+        <div class="container">
+            <h2>Credenciais de API</h2>
+            <p class="section-description">Para acessar os dados necessários, você precisará da chave de API da OpenAI.</p>
+            
+            <div class="api-key-container">
+                <h3>API Key da OpenAI</h3>
+                <div class="api-key-info">
+                    <p><strong>Importante:</strong> Esta API Key é fornecida apenas para uso educacional durante esta aula.</p>
+                    <p>Cada grupo deve usar apenas a chave designada para seu grupo. As chaves possuem limitações de uso e são monitoradas.</p>
+                    <p>Não compartilhe esta chave fora do grupo ou a utilize para fins não relacionados a este projeto educacional.</p>
+                </div>
+                <div class="password-toggle">
+                    <p class="password-prompt">Selecione seu grupo:</p>
+                    <select id="group-select" class="group-select">
+                        <option value="grupo1">Grupo 1</option>
+                        <option value="grupo2">Grupo 2</option>
+                        <option value="grupo3">Grupo 3</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo5">Grupo 5</option>
+                        <option value="grupo6">Grupo 6</option>
+                    </select>
+                    <p class="password-prompt">Para visualizar a chave, digite a senha fornecida pelo instrutor:</p>
+                    <input type="password" id="password-input" class="password-input" placeholder="Digite a senha">
+                    <button id="password-button" class="password-button">Revelar Chave</button>
+                </div>
+                <div id="api-key" class="api-key">
+                    <p><strong>API Key:</strong> <span id="key-value">sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup-instructions">
+        <div class="container">
+            <h2>Instruções para Implementação</h2>
+            
+            <div class="signup-step">
+                <h3>1. Cadastrar na ferramenta</h3>
+                <div class="instruction-step">
+                    <div class="instruction-text">
+                        <p>Para criar seus agentes, acesse <a href="https://flowiseai.com/" target="_blank">https://flowiseai.com/</a></p>
+                        <p>Clique em <strong>Get Started</strong>, e depois em <strong>Sign Up for Free</strong></p>
+                    </div>
+                    <div class="instruction-image-container">
+                        <img src="img/flowiseai-signup.png" alt="Tela de cadastro do FlowiseAI" class="instruction-image">
+                    </div>
+                </div>
+                <p>Preencha seus dados e realize o cadastro e entre na ferramenta</p>
+            </div>
+            
+            <div class="signup-step">
+                <h3>2. Cadastrando Credenciais</h3>
+                <div class="instruction-step">
+                    <div class="instruction-text">
+                        <p>Ao entrar na ferramenta, clique em <strong>Credentials</strong></p>
+                    </div>
+                    <div class="instruction-image-container">
+                        <img src="img/flowiseai-credentials.png" alt="Menu de credenciais do FlowiseAI" class="instruction-image">
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="instruction-text">
+                        <p>Clique em <strong>+ Add Credential</strong></p>
+                        <p>Procure por <strong>OpenAI API</strong></p>
+                        <p>Coloque o nome da credencial de <strong>OpenAI</strong></p>
+                        <p>Coloque a chave referente ao seu grupo (revelada na seção acima após inserir a senha).</p>
+                    </div>
+                    <div class="instruction-image-container">
+                        <img src="img/flowiseai-add-credential.png" alt="Tela de adicionar credencial do FlowiseAI" class="instruction-image">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="implementation-steps">
+                <h3>3. Implementando o Agente</h3>
+                <ol>
+                   
+                    <li>
+                        <p>Entre em <strong>Chatflows</strong> e depois em <strong>Add New</strong></p>
+                    </li>
+                    <li>
+                        <p>Adicione um componente <strong>Tool Agent</strong></p>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Adicione um componente <strong>ChatOpenAI</strong>, aponte para a credencial criada e coloque o <strong>Model Name</strong> como <strong>gpt-4.1-nano</strong></p>
+                            </div>
+                            <div class="instruction-image-container">
+                                <img src="img/chatOpenAI.png" alt="Configuração do ChatOpenAI" class="instruction-image">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Conecte o ChatOpenAI ao Tool Agent</p>
+                                <p>Aponte o ChatOpenAI para o Tool Agent</p>
+                            </div>
+                            <div class="instruction-image-container">
+                                <img src="img/open_ai_to_tool_agent.png" alt="Conexão entre ChatOpenAI e Tool Agent" class="instruction-image">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Adicione um componente <strong>Buffer Memory</strong> e aponte para o Tool Agent no campo de memory</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Seu agente deve estar assim:</p>
+                            </div>
+                            <div class="instruction-image-container">
+                                <img src="img/tool_agent_with_memory.png" alt="Configuração inicial do agente" class="instruction-image">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Abra o chat e dê um "oi". Ele deve responder assim:</p>
+                            </div>
+                            <div class="instruction-image-container">
+                                <img src="img/chat_first.png" alt="Primeira interação com o agente" class="instruction-image">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Adicione a ferramenta <strong>Web Browser</strong> e aponte para o Tool Agent onde ficam as Tools</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Aponte seu ChatOpenAI para o WebBrowser</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Seu agente deve ficar assim:</p>
+                            </div>
+                            <div class="instruction-image-container">
+                                <img src="img/tool_agent_with_web_browser.png" alt="Agente com Web Browser configurado" class="instruction-image">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Adicione um <strong>OpenAI Embeddings</strong> e aponte para o Web Browser</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Na Credential, selecione a credencial OpenAI criada no início e em Model Name coloque <strong>text-embedding-3-small</strong></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Seu Web Browser e o Embeddings deve ficar assim:</p>
+                            </div>
+                            <div class="instruction-image-container">
+                                <img src="img/web_browser_with_embeddings.png" alt="Configuração do Web Browser e Embeddings" class="instruction-image">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-step">
+                            <div class="instruction-text">
+                                <p>Em Tool Agent, clique em <strong>Additional Parameters</strong> e em <strong>System Message</strong> insira o prompt a seguir:</p>
+                                <div class="prompt-box">
+                                    <pre><code>Você é o Pic Imóveis um assistente de vendas de imóveis que combina leitura dinâmica de páginas na web com raciocínio avançado. Use duas ferramentas:
+
+web_browser: Essa ferramenta deve ser usada para buscar inicialmente os melhores locais para investimentos baseados no perfil do cliente. Depois localizar os imóveis que combinam com essa necessidade.
+
+reasoning_tool: para interpretar tendências, comparar índices de crescimento, segurança e qualidade de vida.
+
+Seu fluxo de trabalho:
+
+Fazer perguntas para entender o que o cliente espera. Como número de quartos, tamanho do imóvel, se quer investir em uma área em crescimento ou em algo já consolidado, se quer infra e etc
+
+Depois disso, usando o web_browser, deve acessar a página www.githubopages/pic-imoveis/investimentos.html
+
+Nessa página você pega o estado da cidade e as expectativas de crescimento de cada bairro e o que eles oferecem em investimentos e etc.
+
+Depois disso, acesse a página www.githubopages/pic-imoveis/imóveis.html
+Identifique quais imóveis fariam sentido para o perfil do usuário.
+
+Combinar essas conclusões e apresentar para o usuário com uma mensagem vendendo cada uma das oportunidades.</code></pre>
+                                    <button class="copy-button" onclick="copyPrompt()">Copiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Pic Imóveis</h3>
+                    <p>Imobiliária</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (48) 99150-3830</p>
+                    <p><i class="fas fa-envelope"></i> sempejunior@gmail.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 Pic Imóveis. Todos os direitos reservados. Este é um projeto educacional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox para imagens -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-image" class="lightbox-image" src="" alt="Imagem ampliada">
+            <div class="lightbox-close" id="lightbox-close"><i class="fas fa-times"></i></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function copyPrompt() {
+            const promptText = document.querySelector('.prompt-box code').innerText;
+            navigator.clipboard.writeText(promptText).then(() => {
+                alert('Prompt copiado para a área de transferência!');
+            });
+        }
+
+        // Adiciona funcionalidade de lightbox para imagens
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const instructionImages = document.querySelectorAll('.instruction-image');
+            
+            // Abre o lightbox quando uma imagem é clicada
+            instructionImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    lightboxImage.src = this.src;
+                    lightboxImage.alt = this.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Impede rolagem da página
+                });
+            });
+            
+            // Fecha o lightbox quando o botão fechar é clicado
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Restaura rolagem da página
+            });
+            
+            // Fecha o lightbox quando clicar fora da imagem
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Fecha o lightbox quando a tecla ESC é pressionada
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
