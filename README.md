@@ -12,6 +12,16 @@ Este é um projeto educacional para demonstrar a implementação de agentes de I
 - `js/script.js` - Funcionalidades interativas para filtros, navegação e verificação de senha
 - `img/` - Pasta com imagens utilizadas nas instruções
 
+## Estrutura de Arquivos JSON para Agentes de IA
+
+Para facilitar o acesso dos agentes de IA às informações do site, foram criados dois arquivos JSON estruturados:
+
+1. **dados-investimentos.json**: Contém informações detalhadas sobre os bairros, tendências de mercado e estratégias de investimento. Este arquivo é mais facilmente processado por agentes de IA do que a página HTML completa.
+
+2. **dados-imoveis.json**: Apresenta os dados dos imóveis disponíveis em formato estruturado, facilitando a consulta e filtragem por agentes de IA.
+
+Estes arquivos JSON permitem que os agentes de IA processem as informações com mais eficiência, evitando problemas de parsing em páginas HTML complexas. O prompt do desafio foi atualizado para orientar os alunos a utilizarem estes arquivos.
+
 ## Objetivo do Desafio
 
 O desafio consiste em criar um agente de IA capaz de:
