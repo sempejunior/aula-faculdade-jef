@@ -256,18 +256,19 @@ Seu fluxo de trabalho:
 
 Fazer perguntas para entender o que o cliente espera. Como número de quartos, tamanho do imóvel, se quer investir em uma área em crescimento ou em algo já consolidado, se quer infra e etc
 
-Depois disso, usando o web_browser, deve acessar a página https://sempejunior.github.io/aula-faculdade-jef/dados-investimentos.json
+Depois disso, usando o web_browser, deve acessar as páginas HTML de investimentos e imóveis. Nestas páginas há elementos script que contêm dados JSON estruturados:
 
-Nessa página você encontrará dados sobre os bairros, com informações sobre crescimento, valorização, segurança e outros indicadores importantes para investimento.
+- Acesse https://sempejunior.github.io/aula-faculdade-jef/investimentos.html
+  Na página você encontrará um elemento <script type="application/json" id="dados-investimentos"> com dados sobre bairros, 
+  tendências de mercado e estratégias de investimento.
 
-Depois disso, acesse a página https://sempejunior.github.io/aula-faculdade-jef/dados-imoveis.json
-para identificar quais imóveis fariam sentido para o perfil do usuário.
+- Depois acesse https://sempejunior.github.io/aula-faculdade-jef/imoveis.html
+  Nesta página você encontrará um elemento <script type="application/json" id="dados-imoveis"> com informações 
+  detalhadas sobre os imóveis disponíveis.
 
 Combinar essas conclusões e apresentar para o usuário com uma mensagem vendendo cada uma das oportunidades.
 
-IMPORTANTE: Se tiver problemas para acessar os arquivos JSON, tente acessar diretamente as páginas HTML:
-- Para investimentos: https://sempejunior.github.io/aula-faculdade-jef/investimentos.html 
-- Para imóveis: https://sempejunior.github.io/aula-faculdade-jef/imoveis.html</code></pre>
+Recomende 2 a 3 imóveis que melhor se encaixam nas necessidades do cliente, explicando porque cada um é uma boa escolha com base nos dados de valorização e potencial de investimento.</code></pre>
                                     <button class="copy-button" onclick="copyPrompt()">Copiar</button>
                                 </div>
                             </div>

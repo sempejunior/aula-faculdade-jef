@@ -12,22 +12,22 @@ Este é um projeto educacional para demonstrar a implementação de agentes de I
 - `js/script.js` - Funcionalidades interativas para filtros, navegação e verificação de senha
 - `img/` - Pasta com imagens utilizadas nas instruções
 
-## Estrutura de Arquivos JSON para Agentes de IA
+## Compatibilidade com Agentes de IA
 
-Para facilitar o acesso dos agentes de IA às informações do site, foram criados dois arquivos JSON estruturados:
+Para facilitar o acesso dos agentes de IA às informações do site, foram incorporados elementos `<script type="application/json">` nas páginas HTML principais:
 
-1. **dados-investimentos.json**: Contém informações detalhadas sobre os bairros, tendências de mercado e estratégias de investimento. Este arquivo é mais facilmente processado por agentes de IA do que a página HTML completa.
+1. **Na página imoveis.html**: Um elemento `<script id="dados-imoveis" type="application/json">` contendo os dados dos imóveis disponíveis em formato estruturado.
 
-2. **dados-imoveis.json**: Apresenta os dados dos imóveis disponíveis em formato estruturado, facilitando a consulta e filtragem por agentes de IA.
+2. **Na página investimentos.html**: Um elemento `<script id="dados-investimentos" type="application/json">` contendo informações detalhadas sobre os bairros, tendências de mercado e estratégias de investimento.
 
-Estes arquivos JSON permitem que os agentes de IA processem as informações com mais eficiência, evitando problemas de parsing em páginas HTML complexas. O prompt do desafio foi atualizado para orientar os alunos a utilizarem estes arquivos.
+Esta abordagem facilita o acesso dos agentes de IA às informações estruturadas diretamente nas páginas HTML, evitando problemas com ferramentas web_browser que podem ter dificuldades em acessar arquivos JSON externos ou interpretar HTML complexo.
 
 ## Objetivo do Desafio
 
 O desafio consiste em criar um agente de IA capaz de:
 
 1. Explorar as páginas de imóveis e investimentos
-2. Extrair dados estruturados das tabelas
+2. Extrair dados estruturados dos elementos script JSON
 3. Cruzar informações para encontrar padrões e oportunidades
 4. Recomendar imóveis com base em preferências do cliente
 5. Justificar as recomendações com dados de valorização e potencial de investimento
@@ -70,4 +70,4 @@ Este projeto foi criado como material didático para aulas sobre agentes de IA. 
 
 ## Licença
 
-Este projeto é disponibilizado sob a licença MIT. Sinta-se livre para usar, modificar e distribuir conforme necessário para fins educacionais. 
+Este projeto é disponibilizado sob a licença MIT. Sinta-se livre para usar, modificar e distribuir conforme necessário para fins educacionais.
