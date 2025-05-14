@@ -6,6 +6,47 @@
     <title>Imóveis - Pic Imóveis</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos inline para garantir compatibilidade */
+        .imovel-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .imovel-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .imovel-details h3 {
+            margin-top: 10px;
+        }
+        .imovel-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .imovel-price {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -86,23 +127,22 @@
 
     <section class="imoveis">
         <div class="container">
+            <!-- Apenas os principais imóveis mostrados de forma simplificada -->
             <div class="cards-container" id="imoveis-container">
-                <!-- Os cards serão preenchidos dinamicamente pelo JavaScript, mas aqui estão alguns exemplos estáticos -->
-                <div class="imovel-card" data-id="1" data-bairro="Vila Mar" data-tipo="Apartamento" data-quartos="3" data-banheiros="2">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Apartamento em Vila Mar">
-                    </div>
+                <!-- Apartamento Frente Mar -->
+                <div class="imovel-card">
                     <div class="imovel-details">
                         <h3>Apartamento Frente Mar</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Vila Mar</p>
+                        <p><strong>Bairro:</strong> Vila Mar</p>
+                        <p><strong>Tipo:</strong> Apartamento</p>
                         <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 2 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 2 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+                            <span>3 Quartos</span>
+                            <span>2 Banheiros</span>
+                            <span>2 Vagas</span>
+                            <span>120m²</span>
                         </div>
                         <div class="imovel-description">
-                            <p>Lindo apartamento com vista para o mar, varanda gourmet, móveis sob medida e acabamento de luxo. Localizado a 200m da praia.</p>
+                            <p>Lindo apartamento com vista para o mar, varanda gourmet, móveis sob medida e acabamento de luxo.</p>
                         </div>
                         <div class="imovel-price">
                             <span>R$ 850.000</span>
@@ -110,889 +150,120 @@
                     </div>
                 </div>
 
-                <div class="imovel-card" data-id="2" data-bairro="Jardins" data-tipo="Casa" data-quartos="4" data-banheiros="3">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Jardins">
-                    </div>
+                <!-- Casa em Condomínio -->
+                <div class="imovel-card">
                     <div class="imovel-details">
                         <h3>Casa Ampla em Condomínio</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Jardins</p>
+                        <p><strong>Bairro:</strong> Jardins</p>
+                        <p><strong>Tipo:</strong> Casa</p>
                         <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 4 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 3 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 4 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 280m²</span>
+                            <span>4 Quartos</span>
+                            <span>3 Banheiros</span>
+                            <span>4 Vagas</span>
+                            <span>280m²</span>
                         </div>
                         <div class="imovel-description">
-                            <p>Casa espaçosa em condomínio fechado com segurança 24h, piscina privativa, churrasqueira, jardim amplo e área gourmet completa.</p>
+                            <p>Casa espaçosa em condomínio fechado com segurança 24h, piscina privativa e jardim amplo.</p>
                         </div>
                         <div class="imovel-price">
                             <span>R$ 1.950.000</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="imovel-card" data-id="3" data-bairro="Centro" data-tipo="Comercial" data-quartos="0" data-banheiros="2">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Sala Comercial no Centro">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Sala Comercial Moderna</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Centro</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-door-open"></i> 4 Salas</span>
-                            <span><i class="fas fa-bath"></i> 2 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 3 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 95m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Sala comercial em prédio moderno com recepção, copa, ar-condicionado central, elevador e segurança. Localização privilegiada no centro financeiro.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 620.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="4" data-bairro="Novo Horizonte" data-tipo="Apartamento" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80" alt="Apartamento em Novo Horizonte">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Apartamento Garden</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Novo Horizonte</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 68m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Apartamento garden com quintal privativo, em condomínio com área de lazer completa, portaria 24h e academia. Região em crescimento com ótima valorização.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 380.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="5" data-bairro="Alto da Serra" data-tipo="Cobertura" data-quartos="3" data-banheiros="3">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="Cobertura no Alto da Serra">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Cobertura Duplex</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Alto da Serra</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 3 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 3 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 180m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Cobertura duplex com piscina privativa, terraço panorâmico, 3 suítes com closet e vista impressionante. Área nobre com ótima infraestrutura e valorização.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 1.750.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="6" data-bairro="Vila Mar" data-tipo="Casa" data-quartos="5" data-banheiros="4">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa de Luxo em Vila Mar">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Mansão à Beira-Mar</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Vila Mar</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 5 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 4 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 5 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 450m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Mansão de alto padrão com acesso privativo à praia, piscina, spa, cinema, adega climatizada e acabamentos de luxo. Terreno de 1.200m² com paisagismo profissional.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 8.500.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Novos cards de imóveis -->
-                <div class="imovel-card" data-id="7" data-bairro="Centro" data-tipo="Apartamento" data-quartos="1" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Apartamento Studio no Centro">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Studio Moderno</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Centro</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 1 Quarto</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 35m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Studio compacto e funcional, ideal para solteiros ou investidores. Próximo de estações de transporte público, universidades e comércio local.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 260.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="8" data-bairro="Novo Horizonte" data-tipo="Casa" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa Compacta em Novo Horizonte">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa Compacta - Programa Minha Casa</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Novo Horizonte</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 55m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa compacta com financiamento facilitado pelo programa habitacional. Bairro em expansão com boa infraestrutura básica e transporte público próximo.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 195.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="9" data-bairro="Jardins" data-tipo="Apartamento" data-quartos="3" data-banheiros="2">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Apartamento em Jardins">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Apartamento Garden</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Jardins</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 2 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 2 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 110m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Apartamento garden com área privativa de 60m², perfeito para famílias que valorizam espaço ao ar livre. Condomínio com segurança 24h e estrutura completa.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 780.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="10" data-bairro="Centro" data-tipo="Comercial" data-quartos="0" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Sala Comercial Pequena">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Sala Comercial Compacta</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Centro</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-door-open"></i> 1 Sala</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 30m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Sala comercial compacta, ideal para escritório, consultório ou pequeno comércio. Excelente oportunidade para iniciar seu negócio ou investir em renda passiva.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 180.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="11" data-bairro="Vila Mar" data-tipo="Apartamento" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Apartamento em Vila Mar">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Apartamento Vista Parcial Mar</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Vila Mar</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 65m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Apartamento com vista parcial para o mar, a 500m da praia. Excelente opção para investimento em temporada ou moradia. Região com valorização constante.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 450.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="12" data-bairro="Novo Horizonte" data-tipo="Apartamento" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1494203484021-3c454daf695d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Apartamento em Novo Horizonte">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Apartamento Econômico</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Novo Horizonte</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 50m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Apartamento econômico em bairro em desenvolvimento. Ideal para primeira moradia ou investimento para aluguel. Aceita financiamento pelo programa Casa Verde e Amarela.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 160.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="13" data-bairro="Alto da Serra" data-tipo="Casa" data-quartos="3" data-banheiros="2">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Alto da Serra">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa Sustentável</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Alto da Serra</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 2 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 2 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 170m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa com projeto sustentável, captação de água da chuva e painéis solares. Localizada em área arborizada com vista panorâmica. Investimento para quem valoriza qualidade de vida.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 1.200.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="14" data-bairro="Jardins" data-tipo="Casa" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Jardins">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa Geminada</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Jardins</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 70m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa geminada em condomínio fechado, com segurança e área de lazer. Ótima localização próxima a escolas, parques e comércio. Perfeita para pequenas famílias.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 320.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="15" data-bairro="Centro" data-tipo="Apartamento" data-quartos="3" data-banheiros="2">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Apartamento no Centro">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Apartamento Reformado</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Centro</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 2 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 90m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Apartamento totalmente reformado em prédio antigo com elevador. Excelente oportunidade para quem busca morar no centro com conforto e praticidade.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 490.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="16" data-bairro="Vila Mar" data-tipo="Apartamento" data-quartos="1" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Flat em Vila Mar">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Flat para Temporada</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Vila Mar</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 1 Quarto</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 40m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Flat mobiliado em prédio com serviços de hotelaria. Excelente investimento para aluguel por temporada, com alta rentabilidade na temporada de verão.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 350.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="17" data-bairro="Novo Horizonte" data-tipo="Apartamento" data-quartos="1" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Kitnet em Novo Horizonte">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Kitnet Para Estudantes</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Novo Horizonte</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 1 Quarto</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 0 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 28m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Kitnet próxima à universidade, ideal para estudantes ou investidores. Bairro em crescimento com boa infraestrutura e opções de transporte público.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 120.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="18" data-bairro="Jardins" data-tipo="Casa" data-quartos="3" data-banheiros="3">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Jardins">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa com Home Office</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Jardins</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 3 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 2 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 160m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa espaçosa com escritório separado, ideal para profissionais que trabalham em casa. Localizada em bairro tranquilo com excelente infraestrutura urbana.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 880.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="19" data-bairro="Alto da Serra" data-tipo="Casa" data-quartos="4" data-banheiros="4">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="Casa em Alto da Serra">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa de Campo</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Alto da Serra</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 4 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 4 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 4 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 250m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa de campo com amplo terreno, vista panorâmica e área de lazer completa. Perfeita para quem busca qualidade de vida e contato com a natureza a poucos minutos da cidade.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 1.800.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="20" data-bairro="Centro" data-tipo="Comercial" data-quartos="0" data-banheiros="2">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Loja no Centro">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Loja Térrea</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Centro</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-store"></i> 1 Loja</span>
-                            <span><i class="fas fa-bath"></i> 2 Banheiros</span>
-                            <span><i class="fas fa-car"></i> 0 Vagas</span>
-                            <span><i class="fas fa-ruler-combined"></i> 80m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Loja térrea em rua de grande movimento comercial. Excelente oportunidade para investimento com inquilino já estabelecido ou para iniciar seu próprio negócio.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 550.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Novos imóveis para Bela Vista -->
-                <div class="imovel-card" data-id="21" data-bairro="Bela Vista" data-tipo="Casa" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Bela Vista">
-                    </div>
+                
+                <!-- Casa Simples em Bela Vista -->
+                <div class="imovel-card">
                     <div class="imovel-details">
                         <h3>Casa Simples - Oportunidade</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Bela Vista</p>
+                        <p><strong>Bairro:</strong> Bela Vista</p>
+                        <p><strong>Tipo:</strong> Casa</p>
                         <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 60m²</span>
+                            <span>2 Quartos</span>
+                            <span>1 Banheiro</span>
+                            <span>1 Vaga</span>
+                            <span>60m²</span>
                         </div>
                         <div class="imovel-description">
-                            <p>Casa simples em bairro com alto potencial de valorização. Terreno de 200m² permite ampliação. Região em transformação com chegada de infraestrutura pública e comércio local.</p>
+                            <p>Casa simples em bairro com alto potencial de valorização. Terreno de 200m² permite ampliação.</p>
                         </div>
                         <div class="imovel-price">
                             <span>R$ 110.000</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="imovel-card" data-id="22" data-bairro="Bela Vista" data-tipo="Terreno" data-quartos="0" data-banheiros="0">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1575389666714-e4ee050eb4a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Terreno em Bela Vista">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Terreno para Construção</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Bela Vista</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-expand-arrows-alt"></i> 250m²</span>
-                            <span><i class="fas fa-road"></i> Rua Asfaltada</span>
-                            <span><i class="fas fa-tint"></i> Água Encanada</span>
-                            <span><i class="fas fa-bolt"></i> Energia</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Excelente terreno plano em área com grande potencial de valorização. Pronto para construção imediata. Projeto de urbanização municipal em andamento na região.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 75.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="23" data-bairro="Bela Vista" data-tipo="Apartamento" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1594484208280-efa00f96fc21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Apartamento em Bela Vista">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Apartamento Novo - Minha Casa Minha Vida</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Bela Vista</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 45m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Apartamento novo em condomínio com portaria 24h. Financiamento facilitado pelo programa Minha Casa Minha Vida. Ótima oportunidade para sair do aluguel.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 135.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mais imóveis para outros bairros -->
-                <div class="imovel-card" data-id="24" data-bairro="Vila Operária" data-tipo="Casa" data-quartos="2" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Vila Operária">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa Alugada com Inquilino</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Vila Operária</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 2 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 65m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa já alugada com inquilino de longo prazo. Rendimento mensal de R$ 850, representando retorno anual de 10%. Localização próxima ao distrito industrial.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 105.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="imovel-card" data-id="25" data-bairro="Nova Esperança" data-tipo="Casa" data-quartos="3" data-banheiros="1">
-                    <div class="imovel-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Casa em Nova Esperança">
-                    </div>
-                    <div class="imovel-details">
-                        <h3>Casa para Família</h3>
-                        <p class="imovel-location"><i class="fas fa-map-marker-alt"></i> Nova Esperança</p>
-                        <div class="imovel-features">
-                            <span><i class="fas fa-bed"></i> 3 Quartos</span>
-                            <span><i class="fas fa-bath"></i> 1 Banheiro</span>
-                            <span><i class="fas fa-car"></i> 1 Vaga</span>
-                            <span><i class="fas fa-ruler-combined"></i> 80m²</span>
-                        </div>
-                        <div class="imovel-description">
-                            <p>Casa espaçosa em bairro em desenvolvimento, próxima a escolas e transporte público. Terreno de 250m² com quintal amplo. Excelente para famílias ou investidores.</p>
-                        </div>
-                        <div class="imovel-price">
-                            <span>R$ 165.000</span>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="imoveis-table">
-        <div class="container">
-            <h2>Dados Completos dos Imóveis</h2>
-            <p class="table-info">Esta tabela contém informações detalhadas para consulta pelos agentes de IA</p>
-            <div class="table-responsive">
-                <table id="tabela-imoveis">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tipo</th>
-                            <th>Bairro</th>
-                            <th>Quartos</th>
-                            <th>Banheiros</th>
-                            <th>Vagas</th>
-                            <th>Área (m²)</th>
-                            <th>Preço (R$)</th>
-                            <th>Móveis</th>
-                            <th>Classificação</th>
-                            <th>Infraestrutura</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Apartamento</td>
-                            <td>Vila Mar</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>120</td>
-                            <td>850.000</td>
-                            <td>Sim</td>
-                            <td>Premium</td>
-                            <td>Academia, Piscina, Churrasqueira, Sauna</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Casa</td>
-                            <td>Jardins</td>
-                            <td>4</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>280</td>
-                            <td>1.950.000</td>
-                            <td>Não</td>
-                            <td>Luxo</td>
-                            <td>Piscina, Segurança 24h, Salão de Festas</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Comercial</td>
-                            <td>Centro</td>
-                            <td>0</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>95</td>
-                            <td>620.000</td>
-                            <td>Sim</td>
-                            <td>Empresarial</td>
-                            <td>Elevador, Segurança, Copa</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Apartamento</td>
-                            <td>Novo Horizonte</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>68</td>
-                            <td>380.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Academia, Playground, Salão de Festas</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Cobertura</td>
-                            <td>Alto da Serra</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>180</td>
-                            <td>1.750.000</td>
-                            <td>Sim</td>
-                            <td>Luxo</td>
-                            <td>Piscina Privativa, Terraço Panorâmico</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Casa</td>
-                            <td>Vila Mar</td>
-                            <td>5</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>450</td>
-                            <td>8.500.000</td>
-                            <td>Sim</td>
-                            <td>Ultra Luxo</td>
-                            <td>Piscina, Spa, Cinema, Adega, Acesso à Praia</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Apartamento</td>
-                            <td>Centro</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>45</td>
-                            <td>320.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Portaria 24h, Elevador</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Casa</td>
-                            <td>Novo Horizonte</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>150</td>
-                            <td>650.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Quintal, Churrasqueira</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Apartamento</td>
-                            <td>Jardins</td>
-                            <td>4</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>140</td>
-                            <td>920.000</td>
-                            <td>Sim</td>
-                            <td>Premium</td>
-                            <td>Piscina, Academia, Playground, Espaço Gourmet</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Cobertura</td>
-                            <td>Centro</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>130</td>
-                            <td>1.200.000</td>
-                            <td>Sim</td>
-                            <td>Premium</td>
-                            <td>Terraço, Churrasqueira Privativa</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Casa</td>
-                            <td>Alto da Serra</td>
-                            <td>4</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>220</td>
-                            <td>1.450.000</td>
-                            <td>Não</td>
-                            <td>Luxo</td>
-                            <td>Piscina, Jardim Amplo, Segurança 24h</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Comercial</td>
-                            <td>Novo Horizonte</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>65</td>
-                            <td>430.000</td>
-                            <td>Não</td>
-                            <td>Empresarial</td>
-                            <td>Estacionamento, Segurança</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Casa</td>
-                            <td>Alto da Serra</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>170</td>
-                            <td>1.200.000</td>
-                            <td>Não</td>
-                            <td>Premium</td>
-                            <td>Sustentável, Painéis Solares, Vista Panorâmica</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Casa</td>
-                            <td>Jardins</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>70</td>
-                            <td>320.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Condomínio Fechado, Área de Lazer</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Apartamento</td>
-                            <td>Centro</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>90</td>
-                            <td>490.000</td>
-                            <td>Sim</td>
-                            <td>Premium</td>
-                            <td>Reformado, Prédio Antigo, Elevador</td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Apartamento</td>
-                            <td>Vila Mar</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>40</td>
-                            <td>350.000</td>
-                            <td>Sim</td>
-                            <td>Investimento</td>
-                            <td>Flat, Serviços de Hotelaria</td>
-                        </tr>
-                        <tr>
-                            <td>17</td>
-                            <td>Apartamento</td>
-                            <td>Novo Horizonte</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>28</td>
-                            <td>120.000</td>
-                            <td>Não</td>
-                            <td>Econômico</td>
-                            <td>Próximo à Universidade</td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>Casa</td>
-                            <td>Jardins</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>160</td>
-                            <td>880.000</td>
-                            <td>Não</td>
-                            <td>Premium</td>
-                            <td>Home Office, Bairro Tranquilo</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Casa</td>
-                            <td>Alto da Serra</td>
-                            <td>4</td>
-                            <td>4</td>
-                            <td>4</td>
-                            <td>250</td>
-                            <td>1.800.000</td>
-                            <td>Não</td>
-                            <td>Luxo</td>
-                            <td>Casa de Campo, Área de Lazer Completa</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Comercial</td>
-                            <td>Centro</td>
-                            <td>0</td>
-                            <td>2</td>
-                            <td>0</td>
-                            <td>80</td>
-                            <td>550.000</td>
-                            <td>Não</td>
-                            <td>Empresarial</td>
-                            <td>Loja Térrea, Rua Comercial</td>
-                        </tr>
-                        <tr>
-                            <td>21</td>
-                            <td>Casa</td>
-                            <td>Bela Vista</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>60</td>
-                            <td>110.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Condomínio Fechado, Área de Lazer</td>
-                        </tr>
-                        <tr>
-                            <td>22</td>
-                            <td>Terreno</td>
-                            <td>Bela Vista</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>250</td>
-                            <td>75.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Excelente potencial de valorização</td>
-                        </tr>
-                        <tr>
-                            <td>23</td>
-                            <td>Apartamento</td>
-                            <td>Bela Vista</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>45</td>
-                            <td>135.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Financiamento facilitado</td>
-                        </tr>
-                        <tr>
-                            <td>24</td>
-                            <td>Casa</td>
-                            <td>Vila Operária</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>65</td>
-                            <td>105.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Alugada com inquilino de longo prazo</td>
-                        </tr>
-                        <tr>
-                            <td>25</td>
-                            <td>Casa</td>
-                            <td>Nova Esperança</td>
-                            <td>3</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>80</td>
-                            <td>165.000</td>
-                            <td>Não</td>
-                            <td>Padrão</td>
-                            <td>Excelente para famílias ou investidores</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="imoveis-table">
+                <h2>Lista Completa de Imóveis</h2>
+                <p class="table-info">Esta tabela contém todos os imóveis disponíveis para consulta fácil</p>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tipo</th>
+                                <th>Bairro</th>
+                                <th>Quartos</th>
+                                <th>Banheiros</th>
+                                <th>Vagas</th>
+                                <th>Área</th>
+                                <th>Preço (mil)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Apartamento</td>
+                                <td>Vila Mar</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>120</td>
+                                <td>850</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Casa</td>
+                                <td>Jardins</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>280</td>
+                                <td>1.950</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>Casa</td>
+                                <td>Bela Vista</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>60</td>
+                                <td>110</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>Terreno</td>
+                                <td>Bela Vista</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>250</td>
+                                <td>75</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>Apartamento</td>
+                                <td>Bela Vista</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>45</td>
+                                <td>135</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -1006,16 +277,8 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contato</h4>
-                    <p><i class="fas fa-phone"></i> (11) 4321-1234</p>
-                    <p><i class="fas fa-envelope"></i> contato@picimoveis.exemplo</p>
-                </div>
-                <div class="footer-social">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    <p>(48) 99150-3830</p>
+                    <p>sempejunior@gmail.com</p>
                 </div>
             </div>
             <div class="footer-copyright">
@@ -1023,15 +286,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Lightbox para imagens -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <img id="lightbox-image" class="lightbox-image" src="" alt="Imagem ampliada">
-            <div class="lightbox-close" id="lightbox-close"><i class="fas fa-times"></i></div>
-        </div>
-    </div>
-
-    <script src="js/script.js"></script>
 </body>
 </html> 
