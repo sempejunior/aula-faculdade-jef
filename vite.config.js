@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       basicSsl()
     ],
-    base: './',
+    base: '/aula-faculdade-jef/',
     server: {
       https: true,
       port: 3000
