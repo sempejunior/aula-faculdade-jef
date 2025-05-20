@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       basicSsl()
     ],
+    base: './',
     server: {
       https: true,
       port: 3000
