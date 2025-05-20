@@ -72,19 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const groupSelect = document.getElementById('group-select');
     
     // Carrega variáveis de ambiente (prefixadas com VITE_)
+    // Verifica se import.meta.env existe antes de tentar acessar
+    const importMetaEnv = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env : {};
+    
     const env = {
-        PASSWORD: import.meta.env.VITE_APP_PASSWORD || 'aula2025',
+        PASSWORD: (importMetaEnv.VITE_APP_PASSWORD) || 'aula2025',
         KEYS: {
-            "grupo1": import.meta.env.VITE_OPENAI_API_KEY_GRUPO1 || 'chave-grupo1-placeholder',
-            "grupo2": import.meta.env.VITE_OPENAI_API_KEY_GRUPO2 || 'chave-grupo2-placeholder',
-            "grupo3": import.meta.env.VITE_OPENAI_API_KEY_GRUPO3 || 'chave-grupo3-placeholder',
-            "grupo4": import.meta.env.VITE_OPENAI_API_KEY_GRUPO4 || 'chave-grupo4-placeholder',
-            "grupo5": import.meta.env.VITE_OPENAI_API_KEY_GRUPO5 || 'chave-grupo5-placeholder',
-            "grupo6": import.meta.env.VITE_OPENAI_API_KEY_GRUPO6 || 'chave-grupo6-placeholder',
-            "grupo7": import.meta.env.VITE_OPENAI_API_KEY_GRUPO7 || 'chave-grupo7-placeholder',
-            "grupo8": import.meta.env.VITE_OPENAI_API_KEY_GRUPO8 || 'chave-grupo8-placeholder',
-            "grupo9": import.meta.env.VITE_OPENAI_API_KEY_GRUPO9 || 'chave-grupo9-placeholder',
-            "grupo10": import.meta.env.VITE_OPENAI_API_KEY_GRUPO10 || 'chave-grupo10-placeholder'
+            "grupo1": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO1) || 'chave-grupo1-placeholder',
+            "grupo2": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO2) || 'chave-grupo2-placeholder',
+            "grupo3": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO3) || 'chave-grupo3-placeholder',
+            "grupo4": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO4) || 'chave-grupo4-placeholder',
+            "grupo5": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO5) || 'chave-grupo5-placeholder',
+            "grupo6": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO6) || 'chave-grupo6-placeholder',
+            "grupo7": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO7) || 'chave-grupo7-placeholder',
+            "grupo8": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO8) || 'chave-grupo8-placeholder',
+            "grupo9": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO9) || 'chave-grupo9-placeholder',
+            "grupo10": (importMetaEnv.VITE_OPENAI_API_KEY_GRUPO10) || 'chave-grupo10-placeholder'
         }
     };
     
