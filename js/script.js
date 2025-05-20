@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (passwordInput && passwordButton && apiKey && keyValue) {
         // Senha definida (pode ser alterada pelo instrutor)
-        const correctPassword = "aula2023";
+        const correctPassword = "aula2025";
         
         // API Keys para diferentes grupos
         const apiKeys = {
@@ -82,7 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
             "grupo3": "sk-openai-key-grupo3",
             "grupo4": "sk-openai-key-grupo4",
             "grupo5": "sk-openai-key-grupo5",
-            "grupo6": "sk-openai-key-grupo6"
+            "grupo6": "sk-openai-key-grupo6",
+            "grupo7": "sk-openai-key-grupo7",
+            "grupo8": "sk-openai-key-grupo8",
+            "grupo9": "sk-openai-key-grupo9",
+            "grupo10": "sk-openai-key-grupo10"
         };
         
         passwordButton.addEventListener('click', function() {
