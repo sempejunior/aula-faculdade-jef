@@ -64,50 +64,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Funcionalidade para revelar API Key com senha
+    // Elementos do formulário
     const passwordInput = document.getElementById('password-input');
     const passwordButton = document.getElementById('password-button');
     const apiKey = document.getElementById('api-key');
     const keyValue = document.getElementById('key-value');
     const groupSelect = document.getElementById('group-select');
     
-    if (passwordInput && passwordButton && apiKey && keyValue) {
-        // Senha definida (pode ser alterada pelo instrutor)
-        const correctPassword = "aula2025";
+    // Carrega variáveis de ambiente (prefixadas com VITE_)
+    const env = {
+        PASSWORD: import.meta.env.VITE_APP_PASSWORD || 'aula2025',
+        KEYS: {
+            "grupo1": import.meta.env.VITE_OPENAI_API_KEY_GRUPO1 || 'chave-grupo1-placeholder',
+            "grupo2": import.meta.env.VITE_OPENAI_API_KEY_GRUPO2 || 'chave-grupo2-placeholder',
+            "grupo3": import.meta.env.VITE_OPENAI_API_KEY_GRUPO3 || 'chave-grupo3-placeholder',
+            "grupo4": import.meta.env.VITE_OPENAI_API_KEY_GRUPO4 || 'chave-grupo4-placeholder',
+            "grupo5": import.meta.env.VITE_OPENAI_API_KEY_GRUPO5 || 'chave-grupo5-placeholder',
+            "grupo6": import.meta.env.VITE_OPENAI_API_KEY_GRUPO6 || 'chave-grupo6-placeholder',
+            "grupo7": import.meta.env.VITE_OPENAI_API_KEY_GRUPO7 || 'chave-grupo7-placeholder',
+            "grupo8": import.meta.env.VITE_OPENAI_API_KEY_GRUPO8 || 'chave-grupo8-placeholder',
+            "grupo9": import.meta.env.VITE_OPENAI_API_KEY_GRUPO9 || 'chave-grupo9-placeholder',
+            "grupo10": import.meta.env.VITE_OPENAI_API_KEY_GRUPO10 || 'chave-grupo10-placeholder'
+        }
+    };
+    
+    console.log('Variáveis de ambiente carregadas:', env);
+    
+    // Função para mostrar a chave
+    function showApiKey() {
+        console.log('Verificando senha...');
+        console.log('Senha digitada:', passwordInput.value);
+        console.log('Senha correta:', env.PASSWORD);
         
-        // API Keys para diferentes grupos
-        const apiKeys = {
-            "grupo1": "sk-openai-key-grupo1",
-            "grupo2": "sk-openai-key-grupo2",
-            "grupo3": "sk-openai-key-grupo3",
-            "grupo4": "sk-openai-key-grupo4",
-            "grupo5": "sk-openai-key-grupo5",
-            "grupo6": "sk-openai-key-grupo6",
-            "grupo7": "sk-openai-key-grupo7",
-            "grupo8": "sk-openai-key-grupo8",
-            "grupo9": "sk-openai-key-grupo9",
-            "grupo10": "sk-openai-key-grupo10"
-        };
-        
-        passwordButton.addEventListener('click', function() {
-            if (passwordInput.value === correctPassword) {
-                const selectedGroup = groupSelect.value;
-                const selectedApiKey = apiKeys[selectedGroup];
-                
-                apiKey.classList.add('api-key-visible');
-                keyValue.textContent = selectedApiKey;
-            } else {
-                alert("Senha incorreta. Por favor, consulte o instrutor para obter a senha correta.");
-            }
-        });
-        
-        // Permitir o uso da tecla Enter para verificar a senha
-        passwordInput.addEventListener('keyup', function(event) {
-            if (event.key === "Enter") {
-                passwordButton.click();
-            }
-        });
+        if (passwordInput.value === env.PASSWORD) {
+            const selectedGroup = groupSelect.value;
+            const selectedKey = env.KEYS[selectedGroup] || "Chave não encontrada";
+            
+            console.log('Grupo selecionado:', selectedGroup);
+            console.log('Chave encontrada:', selectedKey);
+            
+            // Mostra o container da chave
+            apiKey.classList.add('visible');
+            keyValue.textContent = selectedKey;
+        } else {
+            alert("Senha incorreta!");
+        }
     }
+    
+    // Event Listeners
+    passwordButton.addEventListener('click', showApiKey);
+    
+    // Tecla Enter também funciona
+    passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            showApiKey();
+        }
+    });
     
     // Smooth scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

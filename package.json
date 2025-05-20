@@ -1,0 +1,25 @@
+{
+  "name": "aula-faculdade-jef",
+  "version": "1.0.0",
+  "description": "Aplicação para exibir chaves de API para alunos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "openai",
+    "api",
+    "keys",
+    "education"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.0.2"
+  }
+}

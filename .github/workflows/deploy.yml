@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # Variáveis de ambiente que serão substituídas pelos GitHub Secrets
+          VITE_APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+          VITE_OPENAI_API_KEY_GRUPO1: ${{ secrets.OPENAI_API_KEY_GRUPO1 }}
+          VITE_OPENAI_API_KEY_GRUPO2: ${{ secrets.OPENAI_API_KEY_GRUPO2 }}
+          VITE_OPENAI_API_KEY_GRUPO3: ${{ secrets.OPENAI_API_KEY_GRUPO3 }}
+          VITE_OPENAI_API_KEY_GRUPO4: ${{ secrets.OPENAI_API_KEY_GRUPO4 }}
+          VITE_OPENAI_API_KEY_GRUPO5: ${{ secrets.OPENAI_API_KEY_GRUPO5 }}
+          VITE_OPENAI_API_KEY_GRUPO6: ${{ secrets.OPENAI_API_KEY_GRUPO6 }}
+          VITE_OPENAI_API_KEY_GRUPO7: ${{ secrets.OPENAI_API_KEY_GRUPO7 }}
+          VITE_OPENAI_API_KEY_GRUPO8: ${{ secrets.OPENAI_API_KEY_GRUPO8 }}
+          VITE_OPENAI_API_KEY_GRUPO9: ${{ secrets.OPENAI_API_KEY_GRUPO9 }}
+          VITE_OPENAI_API_KEY_GRUPO10: ${{ secrets.OPENAI_API_KEY_GRUPO10 }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # ou seu diretório de saída
+
+  deploy:
+    needs: build-and-deploy
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

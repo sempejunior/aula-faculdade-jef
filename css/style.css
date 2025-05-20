@@ -1192,6 +1192,19 @@ li .prompt-box {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
+.api-key {
+    display: none;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 4px solid #4caf50;
+}
+
+.api-key.visible {
+    display: block;
+}
+
 .api-key-info {
     background-color: #e8f5e9;
     border-left: 4px solid #4caf50;
