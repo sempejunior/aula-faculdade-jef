@@ -31,19 +31,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          # Variáveis de ambiente que serão substituídas pelos GitHub Secrets
-          VITE_APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
-          VITE_OPENAI_API_KEY_GRUPO1: ${{ secrets.OPENAI_API_KEY_GRUPO1 }}
-          VITE_OPENAI_API_KEY_GRUPO2: ${{ secrets.OPENAI_API_KEY_GRUPO2 }}
-          VITE_OPENAI_API_KEY_GRUPO3: ${{ secrets.OPENAI_API_KEY_GRUPO3 }}
-          VITE_OPENAI_API_KEY_GRUPO4: ${{ secrets.OPENAI_API_KEY_GRUPO4 }}
-          VITE_OPENAI_API_KEY_GRUPO5: ${{ secrets.OPENAI_API_KEY_GRUPO5 }}
-          VITE_OPENAI_API_KEY_GRUPO6: ${{ secrets.OPENAI_API_KEY_GRUPO6 }}
-          VITE_OPENAI_API_KEY_GRUPO7: ${{ secrets.OPENAI_API_KEY_GRUPO7 }}
-          VITE_OPENAI_API_KEY_GRUPO8: ${{ secrets.OPENAI_API_KEY_GRUPO8 }}
-          VITE_OPENAI_API_KEY_GRUPO9: ${{ secrets.OPENAI_API_KEY_GRUPO9 }}
-          VITE_OPENAI_API_KEY_GRUPO10: ${{ secrets.OPENAI_API_KEY_GRUPO10 }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

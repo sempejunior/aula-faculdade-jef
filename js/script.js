@@ -64,62 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Elementos do formulário
-    const passwordInput = document.getElementById('password-input');
-    const passwordButton = document.getElementById('password-button');
-    const apiKey = document.getElementById('api-key');
+    // Mensagem simples para a página de desafio
+    const submitButton = document.getElementById('submit-button');
+    const apiKeyContainer = document.getElementById('api-key-container');
     const keyValue = document.getElementById('key-value');
-    const groupSelect = document.getElementById('group-select');
     
-    // Carrega variáveis de ambiente do GitHub
-    const env = {
-        PASSWORD: import.meta.env.VITE_APP_PASSWORD,
-        KEYS: {
-            "grupo1": import.meta.env.VITE_OPENAI_API_KEY_GRUPO1,
-            "grupo2": import.meta.env.VITE_OPENAI_API_KEY_GRUPO2,
-            "grupo3": import.meta.env.VITE_OPENAI_API_KEY_GRUPO3,
-            "grupo4": import.meta.env.VITE_OPENAI_API_KEY_GRUPO4,
-            "grupo5": import.meta.env.VITE_OPENAI_API_KEY_GRUPO5,
-            "grupo6": import.meta.env.VITE_OPENAI_API_KEY_GRUPO6,
-            "grupo7": import.meta.env.VITE_OPENAI_API_KEY_GRUPO7,
-            "grupo8": import.meta.env.VITE_OPENAI_API_KEY_GRUPO8,
-            "grupo9": import.meta.env.VITE_OPENAI_API_KEY_GRUPO9,
-            "grupo10": import.meta.env.VITE_OPENAI_API_KEY_GRUPO10
-        }
-    };
-    
-    console.log('Variáveis de ambiente carregadas:', env);
-    
-    // Função para mostrar a chave
-    function showApiKey() {
-        console.log('Verificando senha...');
-        console.log('Senha digitada:', passwordInput.value);
-        console.log('Senha correta:', env.PASSWORD);
-        
-        if (passwordInput.value === env.PASSWORD) {
-            const selectedGroup = groupSelect.value;
-            const selectedKey = env.KEYS[selectedGroup] || "Chave não encontrada";
-            
-            console.log('Grupo selecionado:', selectedGroup);
-            console.log('Chave encontrada:', selectedKey);
-            
-            // Mostra o container da chave
-            apiKey.classList.add('visible');
-            keyValue.textContent = selectedKey;
-        } else {
-            alert("Senha incorreta!");
-        }
+    if (submitButton && apiKeyContainer && keyValue) {
+        submitButton.addEventListener('click', function() {
+            // Mensagem informativa em vez de verificação de senha
+            keyValue.textContent = 'As chaves API serão fornecidas em um arquivo separado (PPT).'; 
+            apiKeyContainer.classList.add('visible');
+        });
     }
-    
-    // Event Listeners
-    passwordButton.addEventListener('click', showApiKey);
-    
-    // Tecla Enter também funciona
-    passwordInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            showApiKey();
-        }
-    });
     
     // Smooth scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
